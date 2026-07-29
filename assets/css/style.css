@@ -1048,6 +1048,11 @@ img {
 .info-item {
   display: flex;
   gap: 16px;
+  align-items: flex-start;
+}
+
+.info-item-full {
+  grid-column: span 2;
 }
 
 .info-icon {
@@ -1425,12 +1430,17 @@ img {
   .info-grid {
     grid-template-columns: 1fr;
   }
+  .info-item-full {
+    grid-column: span 1;
+  }
   .info-item {
     gap: 12px;
+    align-items: flex-start;
   }
   .info-item div {
-    overflow-wrap: anywhere;
-    word-break: break-word;
+    overflow-wrap: break-word;
+    word-break: normal;
+    min-width: 0;
   }
   .footer-grid {
     grid-template-columns: 1fr;

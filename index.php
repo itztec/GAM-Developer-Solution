@@ -40,7 +40,7 @@ require_once __DIR__ . '/config/db.php';
                 <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://wa.me/917855022581" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="admin/login.php" title="Admin Portal" style="margin-left: 10px; background: rgba(201,162,39,0.2); color: var(--color-gold); border: 1px solid var(--color-gold);"><i class="fa-solid fa-user-lock"></i></a>
+
             </div>
         </div>
     </div>
@@ -103,7 +103,7 @@ require_once __DIR__ . '/config/db.php';
                 <div class="about-image-wrapper">
                     <img src="assets/images/about-us.jpg" alt="GAM Developer Solutions Workforce Team" class="about-image">
                     <div class="about-experience-card">
-                        <div class="exp-years">12+</div>
+                        <div class="exp-years">1.5</div>
                         <div class="exp-text">Years of Recruitment Excellence</div>
                     </div>
                 </div>
@@ -272,24 +272,6 @@ require_once __DIR__ . '/config/db.php';
         </div>
     </section>
 
-    <!-- Global Reach Network Visual (Inspired by reference screenshot) -->
-    <section class="global-section">
-        <div class="container">
-            <span class="section-subtitle" style="color: var(--color-gold);">Global Footprint</span>
-            <h2 class="section-title" style="color: #FFF; margin-bottom: 15px;">International Manpower Network</h2>
-            <p style="color: #CBD5E1; max-width: 700px; margin: 0 auto 30px auto;">
-                Connecting global corporate clients with high-caliber manpower across international boundaries.
-            </p>
-
-            <div class="global-tags">
-                <span class="global-tag"><i class="fa-solid fa-earth-americas"></i> North America</span>
-                <span class="global-tag"><i class="fa-solid fa-earth-europe"></i> Europe</span>
-                <span class="global-tag"><i class="fa-solid fa-earth-asia"></i> Middle East & Gulf</span>
-                <span class="global-tag"><i class="fa-solid fa-earth-asia"></i> Asia Pacific</span>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section class="section section-bg-light" id="client-enquiry">
         <div class="container">
@@ -330,7 +312,7 @@ require_once __DIR__ . '/config/db.php';
                             </div>
                         </div>
 
-                        <div class="info-item" style="grid-column: span 2;">
+                        <div class="info-item info-item-full">
                             <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div>
                                 <div style="font-weight: 700;">Official Email</div>
