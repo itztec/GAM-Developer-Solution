@@ -36,11 +36,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -48,6 +53,8 @@ body {
   color: var(--color-text-main);
   background-color: var(--color-white);
   line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -305,6 +312,8 @@ img {
   display: flex;
   align-items: center;
   gap: 14px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .brand-logo-img {
@@ -316,6 +325,7 @@ img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: var(--transition-fast);
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .brand-logo:hover .brand-logo-img {
@@ -334,11 +344,13 @@ img {
   font-size: 1.5rem;
   font-weight: 800;
   box-shadow: var(--shadow-gold);
+  flex-shrink: 0;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .brand-name {
@@ -598,8 +610,8 @@ img {
 /* 3. Our Services */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .service-card {
@@ -685,8 +697,10 @@ img {
 /* 4. Industries We Serve ("Sectors We Support") */
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .industry-card {
@@ -734,8 +748,10 @@ img {
 /* 5. Job Opportunities Section */
 .jobs-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .job-card {
@@ -1008,12 +1024,10 @@ img {
   letter-spacing: 1px;
 }
 
-/* 9. Client Enquiry Section */
+/* 9. Client Contact Section */
 .enquiry-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 50px;
-  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .enquiry-info {
@@ -1024,10 +1038,16 @@ img {
   border-left: 5px solid var(--color-gold);
 }
 
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
 .info-item {
   display: flex;
   gap: 16px;
-  margin-top: 24px;
 }
 
 .info-icon {
@@ -1201,7 +1221,7 @@ img {
     font-size: 3.2rem;
   }
   .services-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }
@@ -1232,9 +1252,30 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
   .industries-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+  }
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .dash-card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .enquiry-layout {
@@ -1249,6 +1290,10 @@ img {
 
 /* 3. Mobile Devices & Tablets (max-width: 768px) */
 @media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
   .top-bar {
     display: none;
   }
@@ -1276,33 +1321,50 @@ img {
     font-size: 1.05rem;
     padding: 8px 0;
   }
+  .navbar {
+    padding: 12px 0;
+  }
+  .brand-logo {
+    gap: 10px;
+    max-width: 80%;
+  }
   .brand-logo-img {
-    height: 44px;
-    padding: 4px 8px;
+    height: 40px;
+    padding: 4px 6px;
   }
   .brand-name {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    line-height: 1.15;
   }
   .brand-tagline {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.8px;
   }
   .hero-section {
-    padding: 80px 0 90px 0;
+    padding: 70px 0 80px 0;
   }
   .hero-title {
-    font-size: 2.1rem;
-    line-height: 1.2;
+    font-size: 2rem;
+    line-height: 1.25;
   }
   .hero-badge {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     padding: 6px 14px;
   }
   .hero-description {
-    font-size: 1rem;
-    margin-bottom: 30px;
+    font-size: 0.98rem;
+    margin-bottom: 25px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-buttons .btn {
+    width: 100%;
   }
   .section-title {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
   .about-experience-card {
     position: relative;
@@ -1324,6 +1386,52 @@ img {
   .about-highlights {
     grid-template-columns: 1fr;
   }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  .timeline {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 30px;
+    padding-left: 10px;
+  }
+  .timeline::before {
+    top: 0;
+    left: 35px;
+    width: 3px;
+    height: 100%;
+  }
+  .timeline-step {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 16px;
+    padding: 0;
+  }
+  .timeline-node {
+    margin: 0;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+    border-width: 3px;
+  }
+  .enquiry-info {
+    padding: 24px 18px;
+  }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-item {
+    gap: 12px;
+  }
+  .info-item div {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -1344,50 +1452,73 @@ img {
 /* 4. Small Mobile Phones (max-width: 480px) */
 @media (max-width: 480px) {
   .container {
-    padding: 0 16px;
+    padding: 0 12px;
   }
   .section {
-    padding: 50px 0;
+    padding: 45px 0;
+  }
+  .brand-logo-img {
+    height: 36px;
+    padding: 3px 5px;
+  }
+  .brand-name {
+    font-size: 0.95rem;
+  }
+  .brand-tagline {
+    display: none; /* Hide secondary tagline on small phones to prevent header overflow */
   }
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 5px 10px;
   }
-  .hero-buttons .btn {
-    width: 100%;
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
   }
-  .form-wrapper {
-    padding: 24px 16px;
+  .stat-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
   }
-  .form-grid {
+  .stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .features-grid {
     grid-template-columns: 1fr;
   }
-  .form-group.full-width {
-    grid-column: span 1;
+  .dash-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-wrapper {
+    padding: 20px 14px;
+  }
+  .enquiry-info {
+    padding: 20px 14px;
   }
   .industries-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .industry-card {
-    padding: 20px 10px;
+    padding: 18px 8px;
   }
   .industry-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 1.4rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
   }
   .industry-title {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
   }
   .whatsapp-float {
-    width: 50px;
-    height: 50px;
-    font-size: 26px;
-    bottom: 20px;
-    left: 20px;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    bottom: 16px;
+    left: 16px;
   }
 }
 
